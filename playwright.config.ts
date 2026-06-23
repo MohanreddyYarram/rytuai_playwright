@@ -21,6 +21,8 @@ export default defineConfig({
         ignoreHTTPSErrors: true,
         video: 'retain-on-failure',
         trace: 'on-first-retry',
+        permissions: ['geolocation'],
+        geolocation: { latitude: 15.9129, longitude: 79.9400 },
     },
 
     reporter: [['html',{open: 'never'}]],
