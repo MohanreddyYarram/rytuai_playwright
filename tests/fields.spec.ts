@@ -4,7 +4,7 @@ import {test,expect} from '@playwright/test'
 test.describe('Crop Management or Field Management',()=>{
     test.beforeEach(async({page})=>{
        await page.goto('/');
-       await page.waitForLoadState('networkidle')
+       await page.waitForLoadState('domcontentloaded')
         const langBtn = page.getByRole('button', {name: 'English'})
         if (await langBtn.isVisible()){
             await langBtn.click()
