@@ -5,6 +5,7 @@ test.describe('New Farmer Registration Flow',()=>{
 
     test.beforeEach(async ({page})=>{
         await page.goto('/');
+        await page.waitForLoadState('networkidle')
         const langBtn = page.getByRole('button', {name: 'English'})
         if (await langBtn.isVisible()){
             await langBtn.click()
