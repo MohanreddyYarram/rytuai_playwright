@@ -23,3 +23,10 @@ jobs:
         env:
           TEST_PHONE: ${{ secrets.TEST_PHONE }}
           TEST_PASSWORD: ${{ secrets.TEST_PASSWORD }}
+      - name: Upload test failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Playwright-report
+          path: playwright-report/
+          retention-days: 7
