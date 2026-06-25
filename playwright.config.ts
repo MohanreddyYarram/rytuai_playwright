@@ -14,7 +14,7 @@ export default defineConfig({
     use: { 
         baseURL: 'https://www.rytuai.in',    
         
-        headless: false,
+        headless: !!process.env.CI,
         screenshot: 'only-on-failure',
         viewport: {width: 1280, height: 720},
         actionTimeout: 10 * 1000,
