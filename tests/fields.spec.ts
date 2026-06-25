@@ -9,6 +9,7 @@ test.describe('Crop Management or Field Management',()=>{
         if (await langBtn.isVisible()){
             await langBtn.click()
         }
+        await page.waitForLoadState('domcontentloaded')
         await page.locator('#login-phone').fill(process.env.TEST_PHONE!)
         await page.locator('#login-password').fill(process.env.TEST_PASSWORD!)
         await page.getByRole('button',{name:'Login →'}).click();

@@ -23,6 +23,7 @@ export class LoginPage{
     }
 
     async login(phone:string,password:string){
+        await this.page.waitForLoadState('domcontentloaded')
         await this.phoneInput.fill(phone)
         await this.passwordInput.fill(password)
         await this.loginButton.click();

@@ -10,6 +10,7 @@ test.describe('New Farmer Registration Flow',()=>{
         if (await langBtn.isVisible()){
             await langBtn.click()
         }
+        await page.waitForLoadState('domcontentloaded')
 
     })
 
