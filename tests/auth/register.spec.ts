@@ -11,6 +11,7 @@ test.describe('New Farmer Registration Flow',()=>{
             await langBtn.click()
         }
         await page.waitForLoadState('domcontentloaded')
+        await page.waitForSelector('#login-phone', { timeout: 60000 });
 
     })
 

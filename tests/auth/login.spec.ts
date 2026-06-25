@@ -9,7 +9,7 @@ test.describe('Login Flow',()=>{
         loginPage = new LoginPage(page)
         await loginPage.goto();
         await loginPage.selectLanguage();
-        
+        await this.page.waitForSelector('#login-phone', { timeout: 60000 });
 
     })
 
