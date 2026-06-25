@@ -10,7 +10,8 @@ test.describe('Crop Management or Field Management',()=>{
             await langBtn.click()
         }
         await page.waitForLoadState('domcontentloaded')
-        await page.locator('#login-phone').fill(process.env.TEST_PHONE!)
+        const phoneIn= await page.waitForSelector('#login-phone',{timeout:60000});
+        await phoneIn.fill(process.env.TEST_PHONE!);
         await page.locator('#login-password').fill(process.env.TEST_PASSWORD!)
         await page.getByRole('button',{name:'Login →'}).click();
     })
